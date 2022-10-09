@@ -17,7 +17,10 @@ public class MementoPatternDemo {
 
         for(int i =0; i<100; i++) {
             System.out.println("Do you want to change your attributes? (Yes or No)");
-            answ = keyboard.nextLine();
+            do {
+                System.out.println("Enter the correct answer:");
+                answ = keyboard.nextLine();
+            } while (!answ.equals("Yes") && !answ.equals("No"));
             if (answ.equals("Yes")) {
                 temp = Stats.generate();
                 temp.print();
@@ -32,7 +35,10 @@ public class MementoPatternDemo {
         }
 
         System.out.println("Do you want to load previous stats? (Yes or No)");
-        answ = keyboard.nextLine();
+        do {
+            System.out.println("Enter the correct answer:");
+            answ = keyboard.nextLine();
+        } while (!answ.equals("Yes") && !answ.equals("No"));
         if (answ.equals("Yes")) {
             if(caretaker.getId() == 0) {
                 System.out.println("You have nothing to load");
